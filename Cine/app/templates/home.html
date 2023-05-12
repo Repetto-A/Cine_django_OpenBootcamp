@@ -1,0 +1,35 @@
+{% extends './base.html' %} 
+{% load static %}
+
+
+{% block content %}
+
+<section class="seccion contenedor">
+    <h1>Directores</h1>
+
+    <div class="contenedor-anuncios">
+
+        {% for director in directors %}
+        <div class="anuncio">
+
+            <img src="{% static 'app/img/' %}{{ director.img }}" alt="anuncio">
+
+            <div class="contenido-anuncio">
+                <h3>{{ director.name }} {{ director.last_name }}</h3>
+    
+                <a href="{% url 'movies' director.id %}" class="boton-amarillo-block">
+                    Ver Peliculas
+                </a>
+            </div><!--.contenido-anuncio-->
+        </div><!--anuncio-->
+        {% endfor %}
+    
+    </div> <!--.contenedor-anuncios-->
+    <div class="alinear-derecha">
+    </div>
+</section>
+
+</div>
+
+
+{% endblock %}

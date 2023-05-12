@@ -1,0 +1,55 @@
+<html>
+
+<head>
+
+    {% load static %}
+
+     <!-- Fonts -->
+    
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+     
+
+    <!-- Styles -->
+    <link href="{% static 'app/css/app.css' %}" rel="stylesheet">
+
+    <title>
+        {% block title %} Cine clásico {% endblock %}
+    </title>
+
+    <link rel="shortcut icon" href="{% static 'app/img/favicon.ico' %}" type="image/x-icon">
+
+</head>
+
+<body>
+    
+        <div class="contenedor contenido-header">
+            <div class="barra">
+
+                <div class="mobile-menu">
+                    <a href="{% url 'home' %}"><img src="{% static 'app/img/home.png' %}" alt="icono menu responsive"></a>
+                </div>
+
+                <div class="derecha">
+                    <img class="dark-mode-boton" src="{% static 'app/img/dark-mode.svg' %}">
+                </div>
+                
+            </div> <!--.barra-->
+        </div>
+    </header>
+
+    <!--Contenido cambiante-->
+
+    {% block content %} {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer seccion">
+        <p class="copyright">
+            Todos los derechos Reservados {% now 'Y' %} &copy;
+        </p>
+    </footer>
+
+    <script src="{% static 'app/js/app.js' %}"></script>
+
+</body>
+</html>
